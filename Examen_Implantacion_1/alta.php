@@ -1,5 +1,26 @@
 <?php
 include 'head.php';
+session_start();
+if(isset($_REQUEST['enviar']))
+
+{
+     
+      $tipo=$_REQUEST['tipo'];
+      if(isset($_REQUEST['urgente']))
+      {
+            $urgencia='Si';
+      }
+      else
+      {
+            $urgencia='No';
+      }      
+      
+      $lugar=$_REQUEST['lugar'];
+      $descripcion=$_REQUEST['descripcion'];
+      $ip=$_SERVER['REMOTE_ADDR'];
+      $num_incidencia=count($_SESSION['incidencias'])+1; //te lo da automaticamente
+      $_SESSION['incidencias'][$num_incidencia]=array ($tipo, $lugar, $ip, $descripcion);
+}
                                              
  print' 
         <h2 class="postheader">FORMULARIO ALTA INCIDENCIA</h2>

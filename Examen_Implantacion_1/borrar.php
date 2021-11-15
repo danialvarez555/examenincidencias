@@ -1,7 +1,12 @@
 <?php
 
 include 'head.php';
-                                             
+session_start();
+if(isset($_REQUEST['borrar']))
+{
+    $num_incidencia=$_REQUEST['num_incidencia'];
+    unset($_SESSION['incidencias'][$num_incidencia]);
+}                                             
  print' 
             <strong>INTRODUCE EL IDENTIFICADOR DE LA INCIDENCIA A BORRAR<BR><BR></strong>
                                      

@@ -1,6 +1,8 @@
 <?php
 
 include 'head.php';
+session_start();
+var_dump($_SESSION['incidencias']);
                                              
  print' 
          <strong>SELECCIONA EL TIPO DE INCIDENCIA A LISTAR<BR><BR></strong>
