@@ -19,7 +19,7 @@ if(isset($_REQUEST['enviar']))
       $descripcion=$_REQUEST['descripcion'];
       $ip=$_SERVER['REMOTE_ADDR'];
       $num_incidencia=count($_SESSION['incidencias'])+1; //te lo da automaticamente
-      $_SESSION['incidencias'][$num_incidencia]=array ($tipo, $lugar, $ip, $descripcion);
+      $_SESSION['incidencias'][$num_incidencia]=array ($num_incidencia, $urgencia, $tipo, $lugar, $ip, $descripcion);
 }
                                              
  print' 
