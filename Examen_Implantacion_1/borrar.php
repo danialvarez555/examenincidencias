@@ -4,8 +4,14 @@ include 'head.php';
 session_start();
 if(isset($_REQUEST['borrar']))
 {
-    $num_incidencia=$_REQUEST['num_incidencia'];
+    $num_incidencia=$_REQUEST['num_incidencia']-1; //se resta 1 porque el array empieza en 0
+    $contantes=count($_SESSION['incidencias']); //para lo de no se encuentra elemento
     unset($_SESSION['incidencias'][$num_incidencia]);
+    $contdespues=count($_REQUEST['incidencias']); //para lo de no se encuentra elemento
+    if($contantes==$contdespues)
+    {
+        echo "No se encuentra el elemento que quieres borrar";
+    }
 }                                             
  print' 
             <strong>INTRODUCE EL IDENTIFICADOR DE LA INCIDENCIA A BORRAR<BR><BR></strong>
